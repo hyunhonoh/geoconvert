@@ -1,0 +1,7 @@
+# 지리정보 변경
+
+## 출처
+https://github.com/wan2land/python-geo-converter
+
+Splunk에서 데이터 수집 시 네이버 좌표계를 위도 경도 좌표계로 바뀌 위한 명령어
+
