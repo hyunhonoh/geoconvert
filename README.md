@@ -1,6 +1,6 @@
 # geoconvert
 
-- 출처 : https://github.com/wan2land/python-geo-converter/blob/master/GeoConverter.py
+- 변환 코드 출처 : https://github.com/wan2land/python-geo-converter/blob/master/GeoConverter.py
 
 
 
@@ -19,7 +19,7 @@
 | 316730.00                                                    | 589063.00                                                    | 126.55067660157071                                           | 37.90028778475512                                            | 경기도 동두천시 생연2동                                      |
 | 316730.00                                                    | 589063.00                                                    | 126.55067660157071                                           | 37.90028778475512                                            | 경기도 동두천시 생연2동                                      |
 
-```
+```{sql}
 index=bootcamp sourcetype="bootcamp" 
 | convert num(X좌표) as x 
 | convert num(Y좌표) as y 
