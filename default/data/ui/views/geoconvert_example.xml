@@ -1,0 +1,34 @@
+<dashboard version="1.1" hideEdit="true">
+  <label>좌표 변환 예제</label>
+  <description>KATEC 좌표 두 개(서울시청, 동두천 생연2동)를 geoconvert로 변환해 지도에 표시한다.</description>
+  <row>
+    <panel>
+      <table>
+        <search>
+          <query>| makeresults count=2
+| streamstats count as n
+| eval name=if(n=1, "서울시청", "동두천 생연2동"), x=if(n=1, 309946, 316730), y=if(n=1, 552085, 589063)
+| geoconvert x y
+| table name x y x_long y_lat</query>
+        </search>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <map>
+        <search>
+          <query>| makeresults count=2
+| streamstats count as n
+| eval x=if(n=1, 309946, 316730), y=if(n=1, 552085, 589063)
+| geoconvert x y
+| geostats latfield=y_lat longfield=x_long count</query>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="mapping.map.center">(37.7,127.0)</option>
+        <option name="mapping.map.zoom">9</option>
+        <option name="mapping.type">marker</option>
+      </map>
+    </panel>
+  </row>
+</dashboard>

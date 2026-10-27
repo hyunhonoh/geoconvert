@@ -4,3 +4,4 @@ metadata/local.meta
 __pycache__/
 *.pyc
 dist/
+.gstack/
