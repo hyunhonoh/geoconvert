@@ -16,10 +16,14 @@ KATEC(네이버 TM128) 좌표를 WGS84 경위도로 바꾸는 Splunk 검색 명�
 `x_long`(경도), `y_lat`(위도)가 추가된다. 좌표가 없거나 숫자가 아니거나 KATEC 범위를 벗어나면 빈 값.
 
 ```
-index=main sourcetype=stores
-| geoconvert X좌표 Y좌표
-| geostats latfield=y_lat longfield=x_long count
+| makeresults count=2
+| streamstats count as n
+| eval name=if(n=1, "서울시청", "동두천 생연2동"), x=if(n=1, 309946, 316730), y=if(n=1, 552085, 589063)
+| geoconvert x y
+| table name x y x_long y_lat
 ```
+
+지도에 찍으려면 끝에 `| geostats latfield=y_lat longfield=x_long count`.
 
 필드명은 실제 추출된 이름으로 쓴다(`| fieldsummary`로 확인). 앱의 **좌표 변환 예제** 대시보드에서 바로 확인할 수 있다.
 
