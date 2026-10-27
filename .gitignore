@@ -1,1 +1,6 @@
 .DS_Store
+local/
+metadata/local.meta
+__pycache__/
+*.pyc
+dist/

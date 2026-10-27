@@ -1,5 +1,5 @@
-<dashboard>
-  <label>geo_lookup_exmaple</label>
+<dashboard version="1.1">
+  <label>Geo lookup example</label>
   <row>
     <panel>
       <map>
@@ -36,7 +36,7 @@
         <option name="mapping.tileLayer.maxZoom">19</option>
         <option name="mapping.tileLayer.minZoom">0</option>
         <option name="mapping.tileLayer.tileOpacity">1</option>
-        <option name="mapping.tileLayer.url">http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png</option>
+        <option name="mapping.tileLayer.url">https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png</option>
         <option name="mapping.type">choropleth</option>
         <option name="trellis.enabled">0</option>
         <option name="trellis.scales.shared">1</option>
